@@ -11,6 +11,17 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <title>HRT</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function () {
+                let text = ($("#output").text());
+                let html = $.parseHTML(text);
+                $("#output").empty();
+                $("#output").append(html);
+
+            });
+        </script>
 </head>
 
 <body>
@@ -19,15 +30,18 @@
         
         <div style="margin-top: 100px;">
             Output Text:<br>
-            <h1><%=image.text%></h1>
+            <h1 id="output"><%=image.text%></h1>
         </div>
 
 
     </div>
 
+
+    
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>

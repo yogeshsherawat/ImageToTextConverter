@@ -8,9 +8,6 @@ const { createWorker } = require('tesseract.js');
 var axios = require("axios").default;
 const { response } = require("express");
 
-var textract = require('textract');
-
-
 
 
 app.set("view engine", "ejs");
@@ -31,7 +28,6 @@ app.get('/image2', function (req, res) {
 
 app.post('/image', function (req, res) {
 
-    
     var key1 = 'a75370633amshf7849dba7403f10p1520c9jsn334d3e484ce4';
     var key2 = 'fac38de8d6mshbc3293d3897d0c4p123175jsn3ac40d352544';
 
@@ -61,20 +57,6 @@ app.post('/image', function (req, res) {
     }).catch(function (error) {
         console.error(error);
     });
-    
-    /*
-    console.log(req.body.url);
-    textract.fromUrl(req.body.url, function (error, text) {
-        console.log(text);
-        let image = {
-
-            url: req.body.url,
-            text:text
-        }
-        res.render('image', { image});
-    })
-    */
-
 })
 /*
 
